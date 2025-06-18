@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Strands Puzzle</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { border-collapse: collapse; }
+    td { width: 40px; height: 40px; text-align: center; border: 1px solid #ccc; font-size: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Strands Puzzle for {{ date }}</h1>
+  <p>Theme: {{ puzzle['theme'] }}</p>
+  <table>
+    {% for row in board %}
+    <tr>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+  <p>Spanagram uses all letters: <strong>{{ puzzle['spanagram'] }}</strong></p>
+  <p>Other words: {{ puzzle['words']|join(', ') }}</p>
+</body>
+</html>
